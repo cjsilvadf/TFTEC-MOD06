@@ -1,63 +1,83 @@
-variable "resource_group" {
-  description = "Default resource group name that the network will be created in."
-  type        = string
+variable "rg_name" {
+  type = string
 }
-
-variable "az_rg_region" {
-  type        = string
-  description = "Localização dos recursos do azure"
+variable "rg_location" {
+  type = string
 }
-
 variable "vnet_name" {
   type = string
 }
 variable "address_vnet" {
   type = list(any)
 }
-variable "subnet_name_SUB01" {
-  type = string
-}
-variable "subnet_name_SUB02" {
-  type = string
-}
-variable "address_prefix_subnet_SUB01" {
+variable "subnet_names" {
   type = list(any)
 }
-variable "address_prefix_subnet_SUB02" {
+variable "address_prefix_subnets" {
   type = list(any)
 }
 variable "nsg_name" {
   type = string
 }
+
 variable "tags" {
   type        = map(any)
   description = "Tags nos Recursos e Serviços do azure"
   default = {
-    Departamento = "TI"
-    responsavel  = "Cleiton José"
-    Ambiente     = "Treinamento TFTEC AZ-104"
-    MOD          = "06"
+    DataClassification = "General"
+    Criticalidade      = "Business unit-critical"
+    BusinnessUnit      = "Marketing"
+    OpsTeam            = "Cloud operations"
 
   }
 }
-variable "vm_name_sub01" {
-  type = string
-}      
-variable "vm_name_sub02" {
-  type = string
-}      
+variable "vm_names" {
+  type = list(any)
+}
 
 variable "admin_login" {
-  description = "admin login"
-  type        = string
+  type = string
 }
 
 variable "admin_password" {
-  description = "admin password" 
-  type        = string
+  type = string
 }
 
 variable "vmsize_web" {
-  type    = string
-  
+  type = string
+}
+
+variable "lb_name" {
+  type = string
+}
+
+variable "lb_frontend_ip" {
+  type = string
+}
+
+variable "lb_backend_pool" {
+  type = string
+}
+
+variable "lb_rule_name" {
+  type = string
+}
+
+variable "lb_health_probe" {
+  type = string
+}
+
+variable "pip_appgw_az104" {
+  type = string
+}
+variable "subnet_name_appgw" {
+  type = string
+}
+variable "address_prefix_subnet_appgw" {
+  type = list(any)
+
+}
+variable "appgw_name" {
+  type = string
+
 }

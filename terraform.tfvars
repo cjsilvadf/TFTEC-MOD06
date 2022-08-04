@@ -1,0 +1,21 @@
+rg_name                = "RG-AZ-104"
+rg_location            = "brazilsouth"
+vnet_name              = "VNET-AZ104"
+address_vnet           = ["10.10.0.0/22", ]
+subnet_names           = ["SUB-01", "SUB-02"]
+address_prefix_subnets = ["10.10.0.0/24", "10.10.1.0/24"]
+nsg_name               = "NSG-AZ104-06"
+vm_names               = ["VM-WEB01", "VM-WEB02"]
+admin_login            = "cleiton.admin"
+admin_password         = "Partiunuvem#22"
+vmsize_web             = "Standard_B1s"
+lb_name                = "LBAZ104"
+lb_frontend_ip         = "PIP-AZ104"
+lb_backend_pool        = "BKPOOL-01"
+lb_rule_name           = "RULE-LB-01"
+lb_health_probe        = "PROBE-LB-01"
+#
+pip_appgw_az104             = "PIP-APPGW"
+subnet_name_appgw           = "SUB-APPGW"
+address_prefix_subnet_appgw = ["10.10.2.0/27"]
+appgw_name                  = "APPGW"
